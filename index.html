@@ -168,7 +168,7 @@ function TicTacToe1 (element) {
       if (full || winner) {
 
         finished = true;
-	alert("Ende!");      
+	// alert("Ende!");      
 
         field.className = "game-over";
 
@@ -182,6 +182,12 @@ function TicTacToe1 (element) {
 
           caption.innerHTML = messages["draw"];
       }
+      // restliche Buttons entfernen
+      buttons = field.getElementsByTagName("button");
+
+      while (buttons.length) {
+        buttons[0].parentNode.removeChild(buttons[0]);
+      }    
    }
  }
 		// click / tap verarbeiten
