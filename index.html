@@ -88,6 +88,7 @@
     
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
 function TicTacToe1 (element) {
   var current = 0,
   games1,
@@ -197,37 +198,31 @@ function TicTacToe1 (element) {
       }    
    }
  }
-		// click / tap verarbeiten
-		function mark (event) {
-			// Tabellenzelle bestimmen
-			var td = event.target;
+   // click / tap verarbeiten
+   function mark (event) {
+     // Tabellenzelle bestimmen
+     var td = event.target;
 
-			// Button oder Zelle?
-			while (td.tagName.toLowerCase() != "td"
-				&& td != field
-			) {
-				td = td.parentNode;
-			}
+     // Button oder Zelle?
+     while (td.tagName.toLowerCase() != "td" && td != field ) {
+       td = td.parentNode;
+     }
 
-			// Zelle bei Bedarf markieren
-			if (td.tagName.toLowerCase() == "td"
-				&& td.className.length < 1
-			) {
+	// Zelle bei Bedarf markieren
+     if (td.tagName.toLowerCase() == "td" && td.className.length < 1 ) 
+     {
 
-				td.className = players[current]; // Klassennamen vergeben
-				td.innerHTML = players[current];
-
-				current = 1 - current; // zwischen 0 und 1 hin- und herschalten
-
-				// Hinweis aktualisieren
-				caption.innerHTML = "Spieler " + players[current] + " ist am Zug.";
-			}
-			check(); // Spiel zu Ende?
-		}
-
-		// Ereignis bei Tabelle überwachen
-		field.addEventListener("click", mark);
-	}  
+	td.className = players[current]; // Klassennamen vergeben
+	td.innerHTML = players[current];
+	current = 1 - current; // zwischen 0 und 1 hin- und herschalten
+	// Hinweis aktualisieren
+	caption.innerHTML = "Spieler " + players[current] + " ist am Zug.";
+      }
+      check(); // Spiel zu Ende?
+     }
+     // Ereignis bei Tabelle überwachen
+   field.addEventListener("click", mark);
+}  
 	  
   function TicTacToe (element) {
     var current = 0,
