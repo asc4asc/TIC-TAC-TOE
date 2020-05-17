@@ -90,7 +90,8 @@
   document.addEventListener("DOMContentLoaded", function () {
           function TicTacToe1 (element) {
 		var current = 0,
-			players = [ "x", "o" ]
+		     games1,
+			players = [ "x", "o" ],
 			field = element.getElementsByTagName("table")[0],
 			caption = element.getElementsByTagName("caption")[0];
 
@@ -145,7 +146,7 @@
         "select": "wählen",
         "new game?": "Neues Spiel?"
       },
-      finished, games, games1, b, c, i, r, tr;
+      finished, games, b, c, i, r, tr;
 
     function check () {
       var tds = field.getElementsByTagName("td"),
