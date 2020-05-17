@@ -138,6 +138,32 @@
           ]); */
         }
       }
+	  
+	  
+      // diagonal links oben nach rechts unten
+      if (tds[0].className != ""
+        && tds[0].className == tds[4].className
+        && tds[4].className == tds[8].className
+      ) {
+        winner = tds[0].className;
+
+      /*  highlightCells([
+          tds[0], tds[4], tds[8]
+        ]); */
+      }
+
+      // diagonal rechts oben nach links unten
+      if (tds[2].className != ""
+        && tds[2].className == tds[4].className
+        && tds[4].className == tds[6].className
+      ) {
+        winner = tds[2].className;
+
+      /*  highlightCells([
+          tds[2], tds[4], tds[6]
+        ]); */
+      }  
+	  
       // game over?
       if (full || winner) {
 
