@@ -110,6 +110,36 @@
            }
         }
 	if ( full === true ) { alert("Fertig") }  
+  
+	for (i = 0; i < 3; i++) {
+
+        // senkrecht
+        if (tds[0 + i].className != ""
+          && tds[0 + i].className == tds[3 + i].className
+          && tds[3 + i].className == tds[6 + i].className
+        ) {
+          // we have a winner!
+          winner = tds[0 + i].className;
+
+          highlightCells([
+            tds[i], tds[3 + i], tds[6 + i]
+          ]);
+        }
+
+        // waagrecht
+        if (tds[i*3 + 0].className != ""
+          && tds[i*3 + 0].className == tds[i*3 + 1].className
+          && tds[i*3 + 1].className == tds[i*3 + 2].className
+        ) {
+          // we have a winner!
+          winner = tds[i*3].className;
+
+          highlightCells([
+            tds[i*3], tds[i*3 + 1], tds[i*3 + 2]
+          ]);
+        }
+      }
+  
    }
 		// click / tap verarbeiten
 		function mark (event) {
