@@ -95,6 +95,22 @@
 			field = element.getElementsByTagName("table")[0],
 			caption = element.getElementsByTagName("caption")[0];
 
+  function check () {
+        var tds = field.getElementsByTagName("td"),
+        full = true,
+        buttons, i, winner;
+
+        tds = field.getElementsByTagName("td");
+
+        // alle Felder markiert?
+        for (i = 0; i < tds.length; i++) {
+
+           if (tds[i].className == "") {
+             full = false;
+           }
+        }
+	if ( full === true ) { alert("Fertig") }  
+   }
 		// click / tap verarbeiten
 		function mark (event) {
 			// Tabellenzelle bestimmen
