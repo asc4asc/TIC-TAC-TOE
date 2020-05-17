@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.tic-tac-toe td button {
+.tic-tac td button, .tic-tac-toe td button {
   position: absolute;
   left: -100vw;
 }
@@ -38,11 +38,15 @@
   color: #f88;
 }
 
+.tic-tac .o,
+.tic-tac .x, 	
 .tic-tac-toe .o,
 .tic-tac-toe .x {
   z-index: -1;
 }
 
+.tic-tac .o::after,
+.tic-tac .x::after,	
 .tic-tac-toe .o::after,
 .tic-tac-toe .x::after {
   color: black;
@@ -52,16 +56,18 @@
   width: 100%;
 }
 
-.tic-tac-toe .o::after {
+.tic-tac .o::after, .tic-tac-toe .o::after {
   content: "○";
   top: -0.2em;
 }
 
-.tic-tac-toe .x::after {
+.tic-tac .x::after, .tic-tac-toe .x::after {
   content: "×";
   top: -0.125em;
 }
 
+.tic-tac .o.highlighted::after,
+.tic-tac .x.highlighted::after,
 .tic-tac-toe .o.highlighted::after,
 .tic-tac-toe .x.highlighted::after {
   text-shadow:
@@ -74,7 +80,7 @@
     0 0 7px white;
 }
 
-.tic-tac-toe .game-over {
+.tic-tac .game-over, .tic-tac-toe .game-over {
   border-color: red;
 }
 </style>  
