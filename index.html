@@ -109,8 +109,7 @@
              full = false;
            }
         }
-	if ( full === true ) { alert("Fertig") }  
-  
+	
 	for (i = 0; i < 3; i++) {
 
         // senkrecht
@@ -139,7 +138,23 @@
           ]);
         }
       }
-  
+      // game over?
+      if (full || winner) {
+
+        finished = true;
+
+        field.className = "game-over";
+
+        if (winner) {
+
+          caption.innerHTML = messages[
+            players[current] + "-wins"
+          ];
+
+        } else {
+
+          caption.innerHTML = messages["draw"];
+        }
    }
 		// click / tap verarbeiten
 		function mark (event) {
