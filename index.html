@@ -91,11 +91,21 @@ document.addEventListener("DOMContentLoaded", function () {
 function TicTacToe1 (element) {
   var current = 0,
   games1,
+  messages = {
+        "o's-turn": "Spieler O ist am Zug.",
+        "x's-turn": "Spieler X ist am Zug.",
+        "o-wins": "Spieler O gewinnt.",
+        "x-wins": "Spieler X gewinnt.",
+        "draw": "Das Spiel endet unentschieden.",
+        "instructions": "Zum Spielen bitte abwechselnd in die Spielfelder klicken/tappen!",
+        "select": "wählen",
+        "new game?": "Neues Spiel?"
+      },    
   players = [ "x", "o" ],
   field = element.getElementsByTagName("table")[0],
   caption = element.getElementsByTagName("caption")[0];
 		  
-  function highlightCells (cells) {
+ function highlightCells (cells) {
       cells.forEach(function (node) {
         var el = document.createElement("strong");
 
@@ -142,16 +152,13 @@ function TicTacToe1 (element) {
           winner = tds[i*3].className;
           highlightCells([ tds[i*3], tds[i*3 + 1], tds[i*3 + 2] ]); 
         }
-      }
-	  
-	  
+      }  
       // diagonal links oben nach rechts unten
       if (tds[0].className != ""
         && tds[0].className == tds[4].className
         && tds[4].className == tds[8].className
       ) {
         winner = tds[0].className;
-
         highlightCells([tds[0], tds[4], tds[8]]); 
       }
 
