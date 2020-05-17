@@ -145,7 +145,7 @@
         "select": "wählen",
         "new game?": "Neues Spiel?"
       },
-      finished, games, b, c, i, r, tr;
+      finished, games, games1, b, c, i, r, tr;
 
     function check () {
       var tds = field.getElementsByTagName("td"),
@@ -376,8 +376,8 @@
   // finde alle Spiel-Platzhalter
   games1 = document.querySelectorAll(".tic-tac");
 
-  for (i1 = 0; i1 < games1.length; i1++) {
-    TicTacToe1(games[i1]); // aktuelles Fundstück steht in games[i]
+  for (i = 0; i < games1.length; i++) {
+    TicTacToe1(games[i]); // aktuelles Fundstück steht in games1[i]
   }
 	  
 }); 
