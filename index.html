@@ -95,6 +95,18 @@
 			field = element.getElementsByTagName("table")[0],
 			caption = element.getElementsByTagName("caption")[0];
 
+		  
+  function highlightCells (cells) {
+      cells.forEach(function (node) {
+        var el = document.createElement("strong");
+
+        el.innerHTML = node.innerHTML;
+
+        node.innerHTML = "";
+        node.appendChild(el);
+        node.classList.add("highlighted");
+      });
+  }		  
   function check () {
         var tds = field.getElementsByTagName("td"),
         full = true,
@@ -120,9 +132,9 @@
           // we have a winner!
           winner = tds[0 + i].className;
 
-        /*  highlightCells([
+        highlightCells([
             tds[i], tds[3 + i], tds[6 + i]
-          ]); */
+          ]); 
         }
 
         // waagrecht
